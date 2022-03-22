@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/little-russian-cat/static/css/main.c6ec0f48.css",
-    "main.js": "/little-russian-cat/static/js/main.2f2e55d3.js",
+    "main.js": "/little-russian-cat/static/js/main.f342246f.js",
     "static/media/raleway-v22-cyrillic-300.woff2": "/little-russian-cat/static/media/raleway-v22-cyrillic-300.6a0528b403942983a68b.woff2",
     "static/media/raleway-v22-cyrillic-900.woff2": "/little-russian-cat/static/media/raleway-v22-cyrillic-900.797b5998b7dd5967c115.woff2",
     "index.html": "/little-russian-cat/index.html",
     "main.c6ec0f48.css.map": "/little-russian-cat/static/css/main.c6ec0f48.css.map",
-    "main.2f2e55d3.js.map": "/little-russian-cat/static/js/main.2f2e55d3.js.map"
+    "main.f342246f.js.map": "/little-russian-cat/static/js/main.f342246f.js.map"
   },
   "entrypoints": [
     "static/css/main.c6ec0f48.css",
-    "static/js/main.2f2e55d3.js"
+    "static/js/main.f342246f.js"
   ]
 }
