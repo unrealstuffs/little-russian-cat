@@ -1,13 +1,115 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--dark: #070707;
+	--sizeindex: calc(1vw + 1vh);
+	--transition: 0.75s cubic-bezier(0.2, 0.6, 0, 1);
+}
+@font-face {
+	font-family: raleway_m;
+	src: url('/public/assets/fonts/raleway-v22-cyrillic-300.woff2');
+	font-weight: 300;
+}
+@font-face {
+	font-family: raleway_m;
+	src: url('/public/assets/fonts/raleway-v22-cyrillic-900.woff2');
+	font-weight: 900;
+}
+body,
+html {
+	width: 100%;
+	height: 100%;
+	background-color: var(--dark);
+	color: #fff;
+	font-family: raleway_m, sans-serif;
+	overflow: hidden;
+	line-height: 1.8;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+	height: 100%;
+}
+
+.slider {
+	height: 100%;
+	transform: rotate(15deg);
+	overflow: visible !important;
+	top: 10vh;
+}
+.swiper-wrapper {
+	transition: var(--transition) !important;
+	will-change: transform !important;
+}
+.slider__item {
+	max-height: 75vh;
+	overflow: hidden;
+	cursor: pointer;
+	transition: transform var(--transition), box-shadow var(--transition);
+}
+.slider__img {
+	width: 120%;
+	left: -10%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	transition: var(--transition) !important;
+	will-change: transform;
+}
+.slider__bg {
+	z-index: 0 !important;
+	transform: rotate(-20deg) !important;
+	top: -90vh;
+	left: -10vh;
+	opacity: 0.15;
+	filter: blur(120px) saturate(10);
+}
+.slider__bg .slider__item {
+	max-height: 100vh;
+}
+.slider__item.opened {
+	height: 90vh;
+	z-index: 2;
+	transform: rotate(-15deg) scale(1.25) !important;
+	box-shadow: rgb(0 0 0 / 0.75) 0 0 0 10000px;
+}
+.description {
+	position: absolute;
+	font-size: calc(var(--sizeindex) * 0.8);
+	top: 20vh;
+	left: 8vw;
+	max-width: 24vw;
+}
+.logo {
+	font-size: calc(var(--sizeindex) * 3.6);
+	font-weight: 900;
+	display: inline-block;
+	background: linear-gradient(45deg, #ddbfb4, #913536);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.description p {
+	opacity: 0.9;
+}
+
+.display-enter {
+	opacity: 0;
+	transform: translateY(5vh);
+}
+.display-enter-active {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 300ms, transform 300ms;
+}
+.display-exit {
+	opacity: 1;
+}
+.display-exit-active {
+	opacity: 0;
+	transform: translateY(5vh);
+	transition: opacity 300ms, transform 300ms;
 }
